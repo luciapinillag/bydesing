@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    grid-area: header;
+    background-color: rgb(229, 229, 250);
+    height: 80px;
+
+}
+
+.logo {
+    margin: 15px;
+}
+
+main {
+    grid-area: main;
+    background-color: rgb(228, 222, 222);
+}
+
+footer {
+    grid-area: footer;
+    background-color: darkolivegreen;
+}
+
+body {
+    display: grid;
+    border: 1px solid black;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas: "header" "main" "footer";
+    font-family: "Playwrite DE Grund";
+    min-width: 100vh;
+
+}
+
+.logo img {
+    width: 75px;
+    height: 45px;
+    border-radius: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: darkseagreen;
+}
+
+select {
+    width: 160px;
+    height: 40px;
+}
+
+i {
+    font-size: 20px;
+    gap: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.galeria .imagenes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5px;
+}
+
+.galeria .imagenes img {
+    width: 300px;
+    height: 400px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(100%);
+}
+
+.galeria .imagenes img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+footer {
+    grid-area: footer;
+}
+
+footer .redes a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+@media (min-width: 576px) {
+    ul {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        width: 200px;
+        min-height: 100vh;
+        justify-content: flex-start;
+    }
+
+    body {
+        grid-template-areas: "header main"
+            "header main" "header footer";
+        grid-template-columns: 12em 1fr;
+    }
+}
